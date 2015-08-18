@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <!-- Definition for textEditor bean -->
+    <bean id="writer" class="com.elisa.Writer">
+        <property name="spellChecker" ref="spellChecker"/>
+    </bean>
+    <bean id="elisaNamePrint" class="com.elisa.NamePrinter">
+    </bean>
+    <bean id="nameCounter" class ="com.yammer.metrics.core.Counter" scope="prototype" lazy-init="true"></bean>
+    <!-- Definition for spellChecker bean -->
+    <bean id="spellChecker" class="com.elisa.SpellChecker">
+    </bean>
+
+</beans>
